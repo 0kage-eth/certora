@@ -30,6 +30,21 @@
 - It can abstract all the functions that can change a given state
 - For eg., if `approve` function increases allowance -> then writing a rule specific to `approve` does not take advantage of parameterization
 - However, if we define a generic function `f(e, args)` that takes the environment and generic arguments, then we can expand the rule to include any functions that change allownace (these could be `transfer`, `transferFrom`, `increaseAllowance`, `decreaseAllowance`
-o  
+
+### Parametric rule -> only select functions can change state
+- In this case, we can define a rule where we can assert that if balanceBefore != balanceAfter, then the balance change must happen by sleect function selectors. Effectively, we are ensuring there is no backdoor to allow a balance change beyond these select function
+
+## Inductive Logic
+
+- Most formal verification works on mathematical induction
+- If P(0) = true, if P(n)=true => P(n+1) is true, then property P is true for all natural numbers
+- Not everything might be inductively proven - in some cases, our setup might not be inductive
+- In such cases, we need to strengthen the property so that it can be inductively proven
+- Writing invariants and thinking in inductive mode is the most important takeway
+- there is a network effect to writing invariants -> most protocols will have similar invariants that can be just copy pasted 
+- 
+
+
+  
 
 
