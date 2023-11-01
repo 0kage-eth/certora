@@ -42,7 +42,22 @@
 - In such cases, we need to strengthen the property so that it can be inductively proven
 - Writing invariants and thinking in inductive mode is the most important takeway
 - there is a network effect to writing invariants -> most protocols will have similar invariants that can be just copy pasted 
-- 
+
+
+## Formal Verification
+
+- Verification takes the code (`.sol`) and certora spec(`.spec) to formally verify proofs
+- Proofs can either be proven, failed or in unknown state
+- unknown state means that the process timedout and the prover was inconclusive
+- formal verification is as good as the underlying rules -> it is useful with good rules
+- when FV reports a bug, check it
+- When FV does not report a bug, try to change the spec or even, mutate the program to make sure that FV catches is (ie. voluntarily introduce a bug and check if its caught)
+- Vacuous rules are like tautologies - they always hold and provide no useful insights
+- When writing rules, you should be careful not to write rules that are always true -> this gives a false sense of security that the code is correct and even more dangerous than having no rules
+- Hardest problem in FV is writing a spec -> a spec that is strong enough to find bugs
+- FV is great if code is upgraded regularly 
+
+ 
 
 
   
